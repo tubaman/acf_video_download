@@ -8,9 +8,6 @@ deps: .get_flash_videos .bashpodder
 	touch $@
 
 .bashpodder: .xsltproc
-	wget http://lincgeek.org/bashpodder/bashpodder.shell -O bashpodder
-	wget http://lincgeek.org/bashpodder/parse_enclosure.xsl -O parse_enclosure.xsl
-	chmod +x bashpodder
 	touch podcast.log
 	touch $@
 
@@ -35,7 +32,6 @@ distclean: clean
 	rm -f .get_flash_videos .bashpodder .xsltproc
 	rm -f podcast.log
 	rm -rf get-flash-videos
-	rm -f parse_enclosure.xsl bashpodder
 
 download:
 	PATH=$$PWD:$$PWD/get-flash-videos:$$PATH; \
