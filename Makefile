@@ -20,7 +20,7 @@ deps: .get_flash_videos .bashpodder
 
 # update deps
 GET_FLASH_VIDEOS_VER=8890ed9
-updatedeps: update_get_flash_videos
+updatedeps: deps update_get_flash_videos
 
 update_get_flash_videos:
 	cd get-flash-videos; git checkout $(GET_FLASH_VIDEOS_VER)
