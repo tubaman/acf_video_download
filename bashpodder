@@ -25,6 +25,7 @@ while read podcast
 	file=$(xsltproc parse_enclosure.xsl $podcast 2> /dev/null || wget -q $podcast -O - | tr '\r' '\n' | tr \' \" | sed -n 's/.*url="\([^"]*\)".*/\1/p')
 	for url in $file
 		do
+		url=http://vimeo.com/$(echo "$url" | sed 's/.*?clip_id=//')
 		echo $url >> temp.log
 		if ! grep "$url" podcast.log > /dev/null
 			then
