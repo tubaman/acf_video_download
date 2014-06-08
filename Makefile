@@ -19,7 +19,7 @@ GET_FLASH_VIDEOS_VER=8890ed9
 
 clean:
 	echo "" > podcast.log
-	rm -rf 20*
+	find -maxdepth 1 -type d -name "????-??-??" | xargs rm -r
 	rm -f temp.log
 
 distclean: clean
