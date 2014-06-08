@@ -29,7 +29,7 @@ while read podcast
 		echo $url >> temp.log
 		if ! grep "$url" podcast.log > /dev/null
 			then
-			get_flash_videos -f $datadir/$(echo "$url" | awk -F'/' {'print $NF'} | awk -F'=' {'print $NF'} | awk -F'?' {'print $1'}).mp4 "$url"
+			get_flash_videos -r high -f $datadir/$(echo "$url" | awk -F'/' {'print $NF'} | awk -F'=' {'print $NF'} | awk -F'?' {'print $1'}).mp4 "$url"
 		fi
 		done
 	done < bp.conf
